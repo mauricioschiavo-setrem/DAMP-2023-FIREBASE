@@ -19,7 +19,7 @@ export default function Test() {
   //const docRef = collection(db, `users/${userId}/tasks`);
 
   useEffect(() => {
-    setId(userId);
+    alert(userId);
   }, [userId]);
 
   function handleSignout() {
@@ -29,7 +29,8 @@ export default function Test() {
 
   return (
     <>
-      <h2>User {id}</h2>
+      {/* {id} */}
+      <h2>User</h2>
       <Link href="/login">Login</Link>
       <a href="#" onClick={handleSignout}>
         Sair

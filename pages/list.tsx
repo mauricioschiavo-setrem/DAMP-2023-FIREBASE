@@ -5,7 +5,9 @@ export default () => {
   return (
     <>
       <h1>Lista</h1>
-      <Test />
+      <div suppressHydrationWarning>
+        <Test />
+      </div>
     </>
   );
 };
