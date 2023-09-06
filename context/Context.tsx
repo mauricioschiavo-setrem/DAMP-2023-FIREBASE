@@ -28,7 +28,7 @@ export default function Context({ children }: ContextProp) {
 
   return (
     <AppContext.Provider value={{ userId, setUserId }}>
-      {children}
+      {userId && children}
     </AppContext.Provider>
   );
 }
