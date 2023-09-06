@@ -16,10 +16,7 @@ export const AppContext = React.createContext({} as ValueProp); //create the con
 
 //function body
 export default function Context({ children }: ContextProp) {
-  const [userIdStorage, setUserIdStorage] = useLocalStorage(
-    'userId',
-    undefined
-  );
+  const [userIdStorage, setUserIdStorage] = useLocalStorage('userId', '');
   const [userId, setUserId] = useState<string>(userIdStorage);
 
   useEffect(() => {

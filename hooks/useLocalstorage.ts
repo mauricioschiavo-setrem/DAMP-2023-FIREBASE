@@ -1,11 +1,12 @@
+'use client';
 import { useState, useEffect } from 'react';
 
-const useLocalStorage = async (key: string, defaultValue: any) => {
+const useLocalStorage = (key: string, defaultValue: unknown) => {
   const [value, setValue] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem(key) || String(defaultValue));
     } catch (error) {
-      return defaultValue;
+      return String(defaultValue);
     }
   });
 
