@@ -40,3 +40,7 @@ First, run the development server:
 ```bash
 npm i --save firebase
 ```
+
+```bash
+npm i --save @uidotdev/usehooks
+```

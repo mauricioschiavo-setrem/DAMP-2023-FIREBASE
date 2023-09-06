@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { useGlobalContext } from '../context/Context';
 import { auth } from '../services/firebase';
@@ -43,6 +45,7 @@ export default () => {
       .then((userCredential) => {
         const user = userCredential.user;
         setUserId(user.uid); //this way, it is only a string and not string | undefined as before
+
         router.push('/list');
       })
       .catch((error) => {

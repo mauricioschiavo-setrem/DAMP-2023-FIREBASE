@@ -1,6 +1,7 @@
 // Context.tsx
 
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import useLocalStorage from '../hooks/useLocalstorage';
 
 type ValueProp = {
   userId: string;
@@ -15,7 +16,15 @@ export const AppContext = React.createContext({} as ValueProp); //create the con
 
 //function body
 export default function Context({ children }: ContextProp) {
-  const [userId, setUserId] = useState<string>('');
+  const [userIdStorage, setUserIdStorage] = useLocalStorage(
+    'userId',
+    undefined
+  );
+  const [userId, setUserId] = useState<string>(userIdStorage);
+
+  useEffect(() => {
+    setUserId(userIdStorage);
+  }, [userIdStorage]);
 
   return (
     <AppContext.Provider value={{ userId, setUserId }}>
